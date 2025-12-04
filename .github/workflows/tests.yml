@@ -70,3 +70,14 @@ jobs:
           cmake ..
           make
           ./src/calculator sub 10 5
+  Deploy:
+    runs-on: ubuntu-latest
+    needs:
+      - Compilation
+      - Test_Add
+      - Test_Div
+      - Test_Mul
+      - Test_Sub
+    steps:
+      - name: Déploiement
+        run: echo "Déploiement de la solution"
